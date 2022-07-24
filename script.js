@@ -13,9 +13,9 @@ window.addEventListener('load', () =>{
 
         e.preventDefault();
         
-        // if(!exp_value && !amt_value && !date_value){
-        //     alert('Please fill out the boxes'); 
-        // }
+        if(!exp_value && !amt_value && !date_value){
+            alert('Please fill out the boxes'); 
+        }
         
         const expList = document.createElement('tbody');
         expList.classList.add('li_expenses');
