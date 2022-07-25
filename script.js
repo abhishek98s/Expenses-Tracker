@@ -7,11 +7,11 @@ window.addEventListener('load', () =>{
     const button = document.querySelector('#button');
     const exp_list = document.querySelector('.li_expenses');
     const total = document.querySelector('#total');
-    var expenditure = document.querySelector("#expn");
+    var expenditure = document.getElementById('#expn');
     
     
     const total_value = parseInt(cash);
-    console.log(cash);
+    console.log(exp.value);
 
     const exp_value =exp.value;
     const amt_value =amt.value;
@@ -26,9 +26,26 @@ window.addEventListener('load', () =>{
 
         e.preventDefault();
         
-        if(!exp.value && !amt.value && !date.value){
+        if (!exp.value && !amt.value && !date.value){
             alert('Please fill out the boxes'); 
-        }else{
+            console.log(!!exp.value);
+            return;
+        }
+
+        if (!exp.value && !amt.value && !date.value){
+            alert('Please fill out the boxes'); 
+            console.log(!!exp.value);
+            return;
+        }
+
+        if (cash <= 0){
+            alert("NO cash");
+            exp.value = "";
+            amt.value = "";
+            date.value = "";
+            return;
+        }
+
             const expList = document.createElement('tbody');
         expList.classList.add('li_expenses');
 
@@ -38,6 +55,15 @@ window.addEventListener('load', () =>{
         td_exp.innerHTML =exp.value;
 
         const td_amt = document.createElement('td');
+
+        if (cash <= 0){
+            alert("NO cash1");
+            exp.value = "";
+            amt.value = "";
+            date.value = "";
+            return;
+        }
+
         td_amt.innerHTML = amt.value;
         cash = cash - amt.value;
         total.innerHTML = cash;
@@ -50,6 +76,7 @@ window.addEventListener('load', () =>{
         td_date.innerHTML = date.value;
 
         exp_list.appendChild(tr);
+
         tr.appendChild(td_exp);
         tr.appendChild(td_amt);
         tr.appendChild(td_date);
@@ -57,9 +84,8 @@ window.addEventListener('load', () =>{
         exp.value = "";
         amt.value = "";
         date.value = "";
-    };
-    expenditure.innerHTML = expenditure_value;   
+    
 
     })
 
-})
+});
