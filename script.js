@@ -13,7 +13,7 @@ window.addEventListener('load', () =>{
 
         e.preventDefault();
         
-        if(!exp_value && !amt_value && !date_value){
+        if(!exp.alue && !amt.value && !date.value){
             alert('Please fill out the boxes'); 
         }
         
