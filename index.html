@@ -7,8 +7,15 @@
     </head>
 
     <body>
+        <div class="total">
+        <h3>Total cash:</h3>
+
+        <p  id="total">30000</p>
+        </div>
+        
+
         <form>
-        <input id="expenses" placeholder="Expenses">
+        <input id="expenses" type="text" placeholder="Expenses">
         <input id="amt" type='number' placeholder="Amount">
         <input id="date" type="date" placeholder="Date">
         <input id='button' type="submit">
@@ -28,8 +35,18 @@
             <tbody class="li_expenses">    
            
             </tbody>  
+
+            <tbody>
+                <tr>
+                    <td>Total expenses:</td>
+                    <td >Name</td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <p id="#expn"></p>
              
         </table>
+        
     <script src="script.js"></script>    
     </body>
 </html>
