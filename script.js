@@ -1,5 +1,5 @@
+var cash = prompt("PLease enter your available cash");
 
-    var cash = prompt("PLease enter your available cash");
 window.addEventListener('load', () =>{
     const exp = document.querySelector('#expenses');
     const amt = document.querySelector('#amt');
@@ -9,44 +9,18 @@ window.addEventListener('load', () =>{
     const total = document.querySelector('#total');
     var expenditure = document.getElementById('#expn');
     
-    
-    const total_value = parseInt(cash);
-    console.log(exp.value);
-
     const exp_value =exp.value;
     const amt_value =amt.value;
     const date_value =date.value;
 
-
     var expenditure_value = 0;
-
     total.innerHTML = cash;
 
     button.addEventListener('click', (e) =>{
 
         e.preventDefault();
-        
-        if (!exp.value && !amt.value && !date.value){
-            alert('Please fill out the boxes'); 
-            console.log(!!exp.value);
-            return;
-        }
 
-        if (!exp.value && !amt.value && !date.value){
-            alert('Please fill out the boxes'); 
-            console.log(!!exp.value);
-            return;
-        }
-
-        if (cash <= 0){
-            alert("NO cash");
-            exp.value = "";
-            amt.value = "";
-            date.value = "";
-            return;
-        }
-
-            const expList = document.createElement('tbody');
+        const expList = document.createElement('tbody');
         expList.classList.add('li_expenses');
 
         const tr = document.createElement('tr');
@@ -57,10 +31,25 @@ window.addEventListener('load', () =>{
         const td_amt = document.createElement('td');
 
         if (cash <= 0){
-            alert("NO cash1");
+            alert("N0 cash left");
             exp.value = "";
             amt.value = "";
             date.value = "";
+            return;
+        }
+
+        if (!exp.value ){
+            alert('Please fill out the boxes'); 
+            return;
+        }
+
+        if (!amt.value){
+            alert('Please fill out the boxes'); 
+            return;
+        }
+
+        if (!date.value){
+            alert('Please fill out the boxes'); 
             return;
         }
 
@@ -76,7 +65,6 @@ window.addEventListener('load', () =>{
         td_date.innerHTML = date.value;
 
         exp_list.appendChild(tr);
-
         tr.appendChild(td_exp);
         tr.appendChild(td_amt);
         tr.appendChild(td_date);
@@ -84,8 +72,5 @@ window.addEventListener('load', () =>{
         exp.value = "";
         amt.value = "";
         date.value = "";
-    
-
-    })
-
+    });
 });
