@@ -56,10 +56,24 @@ main{
     width: 100%;
     display: grid;
     place-content: center;
-    padding: 2rem;
+    padding: rem;
     margin: 2rem 0;
 }
 
 main table{
-    width: 43rem;
+    width: 40rem;
+}
+
+.input{
+    background-color: #525050;
+    border: 1px solid none;
+    border-radius: 2rem;
+    box-shadow: -0.3rem -0.4rem #5e5c5c inset;
+    padding: 0.3rem;
+    outline: none;
+    transition: 1s;
+}
+
+.input:focus{
+    box-shadow: 1rem 1rem ;
 }
