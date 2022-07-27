@@ -1,3 +1,12 @@
+*{
+    color: white;
+    font-size: 1.4rem;
+}
+
+html{
+    background-color: rgb(63, 62, 62);
+}
+
 table {
     border-collapse: collapse;
     width: 40%;
@@ -10,5 +19,46 @@ td, th {
 }
 
 tr:nth-child(even) {
-    background-color: #dddddd;
+    background-color: #525050;
   }
+
+.total{
+    width: 15%;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+}
+
+.total h3{
+    width: 5em;
+}
+
+.total p{
+    display: flex;
+    align-items: center;
+}
+
+.tot_body{
+    background-color: #575454;
+    color: white;
+}
+
+.tot_expenses{
+    border: initial;
+}
+
+#expn{
+    background-color: #575454;
+}
+
+main{
+    border: 1px solid ;
+    width: 100%;
+    display: grid;
+    place-content: center;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+main table{
+    width: 43rem;
+}
