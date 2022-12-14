@@ -1,36 +1,41 @@
 var cash = prompt("PLease enter your available cash");
 
-window.addEventListener('load', () =>{
+window.addEventListener('load', () => {
     const exp = document.querySelector('#expenses');
     const amt = document.querySelector('#amt');
     const date = document.querySelector('#date');
-    const button = document.querySelector('#button');
-    const exp_list = document.querySelector('.li_expenses');
-    const total = document.querySelector('#total');
-    var expenditure = document.getElementById('#expn');
-    
-    const exp_value =exp.value;
-    const amt_value =amt.value;
-    const date_value =date.value;
+    const button = document.querySelector('#submit_button'); //  onSubmit button
+    const availableCash = document.querySelector('#total');
+    var main = document.querySelector('.main')  // Render the expenses
 
-    var expenditure_value = 0;
-    total.innerHTML = cash;
+    var arr = [];
+    availableCash.innerHTML = cash;
 
-    button.addEventListener('click', (e) =>{
-
+    button.addEventListener('click', (e) => {
         e.preventDefault();
 
-        const expList = document.createElement('tbody');
-        expList.classList.add('li_expenses');
+        let details = {
+            expenses: exp.value,
+            amount: amt.value,
+            date: date.value
+        }
 
-        const tr = document.createElement('tr');
+        arr.push(details)
 
-        const td_exp = document.createElement('td');
-        td_exp.innerHTML =exp.value;
+        console.log(arr)
 
-        const td_amt = document.createElement('td');
+        const a = parseInt(availableCash.innerHTML);
+        const b = parseInt(amt.value);
 
-        if (cash <= 0){
+        if (a < b) {
+            alert("Not enough")
+            exp.value = "";
+            amt.value = "";
+            date.value = "";
+            return
+        }
+
+        if (availableCash.innerHTML <= 0) {
             alert("N0 cash left");
             exp.value = "";
             amt.value = "";
@@ -38,39 +43,40 @@ window.addEventListener('load', () =>{
             return;
         }
 
-        if (!exp.value ){
-            alert('Please fill out the boxes'); 
+        if (!exp.value) {
+            alert('Please fill out the boxes');
             return;
         }
 
-        if (!amt.value){
-            alert('Please fill out the boxes'); 
+        if (!amt.value) {
+            alert('Please fill out the boxes');
             return;
         }
 
-        if (!date.value){
-            alert('Please fill out the boxes'); 
+        if (!date.value) {
+            alert('Please fill out the boxes');
             return;
         }
 
-        td_amt.innerHTML = amt.value;
         cash = cash - amt.value;
         total.innerHTML = cash;
-        expenditure_value += Math.floor(amt.value);
-        console.log(expenditure_value);
-        expenditure.innerHTML = expenditure_value;   
-        
-
-        const td_date = document.createElement('td')
-        td_date.innerHTML = date.value;
-
-        exp_list.appendChild(tr);
-        tr.appendChild(td_exp);
-        tr.appendChild(td_amt);
-        tr.appendChild(td_date);
 
         exp.value = "";
         amt.value = "";
         date.value = "";
+
+
+        main.innerHTML = arr.map((el) => {
+            return `<div class="expense_list">
+            <div>
+                <p>${el.expenses}</p>
+            </div>
+            <p>$ ${el.amount}</p> 
+            <p>${el.date}</p>
+        </div> `
+        })
     });
 });
+
+
+
