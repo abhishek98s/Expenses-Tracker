@@ -1,52 +1,64 @@
- <html>
-    <head>
-        <title>
-            Expenses Tracker
-        </title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+<html>
 
-    <body>
+<head>
+    <title>
+        Expenses Tracker
+    </title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="body">
+    <div>
         <div class="total">
-        <h3>Total cash:</h3>
-
-        <p  id="total"></p>
+            <h3>Your Current balance</h3>
+            
+            <span>$ <span id="total"></span></span>
         </div>
-        
+
 
         <form>
-        <input class="input" id="expenses" type="text" placeholder="Expenses">
-        <input class="input" id="amt" type='number' placeholder="Amount">
-        <input class="input" id="date" type="date" placeholder="Date">
-        <input class="input" id='button' type="submit">
+            <div class="form_input">
+                <label for="expenses">Expenses Name</label><br>
+                <input class="input" id="expenses" type="text" placeholder="Expenses">
+            </div>
+
+            <div class="form_input">
+                <label>Amount</label><br>
+                <input class="input" id="amt" type='number' placeholder="Amount">
+            </div>
+
+            <div class="form_input">
+                <label>Date</label><br>
+                <input class="input" id="date" type="date" placeholder="Date">
+            </div>
+            
+            <div class="form_input">
+                <input class="input" id='submit_button' type="submit">
+            </div>    
         </form>
+    </div>
 
-        <main>
-        <h1>Expenses</h1>
+    <main>
+        <h2>Expenses</h2>
+        <div class="main">
+            <div class="scroll">
 
-        <table>
-            <tbody class="li_expenses">
-            <tr>
-                <td>Date</td>
-                <td>Name</td>
-                <td>Amount</td>
-            </tr>
-            </tbody> 
-
-            <tbody class="li_expenses">    
-           
-            </tbody>  
-
-            <tbody>
-                <tr class="tot_body">
-                    <td class="tot_expenses">Total</td>
-                    <td id="#expn"></td>
-                    <td class="tot_expenses"></td>
-                </tr>
-            </tbody>
-        </table>
-    </main>
+            <!-- <div class="expense_list">
+                <div>
+                    <p>baseballsdsdsd</p>
+                </div>
+                <p>$ 23</p> 
+                <p>20022-22-2</p>
+            </div>  -->
+            </div>
+        </div>
         
-    <script src="script.js"></script>    
-    </body>
+    </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
 </html>
