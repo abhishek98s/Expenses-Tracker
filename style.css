@@ -101,7 +101,15 @@ main h2{
     border-bottom:  0.2em solid#88ddff;
 }
 
+.main{
+    height: 30em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+ 
+}
+
 .scroll{
+    height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
 
@@ -199,6 +207,13 @@ main h2{
         margin: auto;
         padding: 1.5em  0;
         font-size: 1.2rem;
+    }
+
+    .main{
+        height: 30em;                       /*Yooooooooooooooooooooooooooooooooooooooooooooooooooooooo*/
+        overflow-y: scroll;
+        overflow-x: hidden;
+     
     }
 
     .total{
